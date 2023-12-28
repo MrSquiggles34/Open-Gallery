@@ -1,0 +1,39 @@
+html
+    head
+        title User's Profile
+    body()
+        script(src="/js/client.js")
+        link(href="/views/browse.css", type="text/css", rel="stylesheet")
+        header
+        .top-right-buttons
+            form()
+                button(type="button" onclick="toggleAccountType()") Switch account type
+                button(type="button" onclick="viewFollowing()") View Following
+                button(type="button" onclick="viewLikedPosts()") Liked
+                button(type="button" onclick="viewCommentedPosts()") Commented
+                button(type="button") View Notifications
+            div#following-container(style="display: none;")
+                include ./following.pug
+            div#liked-posts-container(style="display: none;")
+                include ./liked.pug
+            div#commented-posts-container(style="display: none;")
+                include ./comments.pug
+                
+            br
+            form(action="/browse" method="GET")
+                button(type="submit") Browse
+            form(action="/logout" method="POST")
+                button(type="submit") Logout
+        h1 Welcome #{username} the #{accountType}
+        p Your posts: 
+        
+        each art in arts.reverse()
+            l
+                h2= art.Title
+                a(href="/art/" + art["_id"]) 
+                    div.thumbnail-container
+                        img(src=art.Poster, alt=art.Title)
+                
+        
+
+

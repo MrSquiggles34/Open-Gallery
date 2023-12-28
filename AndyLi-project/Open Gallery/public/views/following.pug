@@ -1,0 +1,8 @@
+
+if following && following.length > 0
+    each follow in following.reverse()
+        ul
+            a(href=`/artists/${follow._id}`) #{follow.name}
+else
+    p You are not following anyone
+hr

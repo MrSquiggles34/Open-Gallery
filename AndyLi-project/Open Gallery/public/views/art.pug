@@ -1,0 +1,29 @@
+html
+    head
+        title= title
+    body
+        script(src="/js/client.js")
+        h1= "Title: " + result.Title
+        a(href=`/artists/${artistID._id.toString()}`)= "Artist: " + result.Artist
+        p= "Year: " + result.Year 
+        a(href=`/browse/search?${result.Category}`, onclick="setSearchQuery('${Category}')")= "Category: " + result.Category 
+        p
+            a(href=`/browse/search?${result.Medium}`, onclick="setSearchQuery('${Medium}')")= "Medium: " + result.Medium
+        p= "Description: " + result.Description
+        img(src=result.Poster, alt=result.Title)
+
+        p= "Likes: " + result.Likes
+        button(type="button", onclick=`likePost('${result._id}')`, id="likeButton") #{likeStatus}
+        form(id="commentForm")
+            textarea(name="comment", id="commentContent", placeholder="Write a comment (You can only write 1)", rows="4", cols="50", maxlength="256")
+            button(type="button", onclick=`commentPost('${result._id}')`) Post
+
+            // Add a comments section
+
+        if result.Comments.length > 0
+            h2 Comments
+            each comment in result.Comments
+                p= comment
+        div#newCommentContainer
+            if newComment
+                p= newComment

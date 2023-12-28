@@ -1,0 +1,8 @@
+ul
+    if artList.length > 0
+        each art in artList
+            li
+                a(href=`/art/${art._id}`)= art.Title
+    else
+        li Try: mural
+

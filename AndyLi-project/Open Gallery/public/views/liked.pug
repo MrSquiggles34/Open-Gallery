@@ -1,0 +1,8 @@
+
+if liked && liked.length > 0
+    each like in liked.reverse()
+        ul
+            a(href=`/art/${like._id}`) #{like.Title} by #{like.Artist}
+else
+    p No posts have been liked on.
+hr

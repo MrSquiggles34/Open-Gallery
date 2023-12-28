@@ -1,0 +1,8 @@
+
+if commented && commented.length > 0
+    each comment in commented.reverse()
+        ul
+            a(href=`/art/${comment._id}`) #{comment.Title} by #{comment.Artist}
+else
+    p No posts have been commented on.
+hr

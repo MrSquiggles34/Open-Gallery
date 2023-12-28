@@ -1,0 +1,31 @@
+html
+    head
+        title Open Gallery
+    body(onload="init()")
+        script(src="/js/client.js")
+        link(href="/views/browse.css", type="text/css", rel="stylesheet")
+        ul
+            h1 Browse your favourite Art!
+
+            form(action="/profile" method="GET")
+                button(type="submit") Your Profile
+            // Search form
+            p Search: 
+                input#searchQuery(type="textbox")
+                button#refresh(type="button") Search
+
+            div#results
+        br
+        hr
+        br
+
+        each art in arts.reverse()
+            l
+                h2= art.Title
+                a(href="/art/" + art["_id"]) 
+                    div.thumbnail-container
+                        img(src=art.Poster, alt=art.Title)
+                    
+
+
+            

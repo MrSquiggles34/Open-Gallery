@@ -1,0 +1,16 @@
+html
+    head
+        title Users Profile
+    body()
+        script(src="/js/client.js")
+        link(href="/views/browse.css", type="text/css", rel="stylesheet")
+        br
+        h1 Welcome to #{artist.name}'s page!
+        button(type="button", id="followButton", onclick=`followArtist('${artist._id}')`) #{followStatus}
+        each art in arts.reverse()
+            l
+                h2= art.Title
+                a(href="/art/" + art["_id"]) 
+                    div.thumbnail-container
+                        img(src=art.Poster, alt=art.Title)
+

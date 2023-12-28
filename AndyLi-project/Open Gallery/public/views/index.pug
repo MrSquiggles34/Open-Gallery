@@ -1,0 +1,10 @@
+html
+	head
+		title Open Gallery
+	body(onload="init()")
+		script(src="js/client.js")
+		h1 Welcome to Open Art Gallery Presented By Mr.Squiggles
+		form(id='goToLogin', onsubmit='login(event)')
+			button#login(type="submit") 
+				a(href="/login") Login
+				

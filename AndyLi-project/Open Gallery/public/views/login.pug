@@ -1,0 +1,21 @@
+html
+    head
+        title Card Searcher
+        link(href="views/styles.css", type="text/css", rel="stylesheet")
+        script(src="js/client.js")
+    body
+        h1 Login Here
+        form(action="/login" method="POST")
+            h1 User Login
+            div
+                label(for="email") Email
+                input(type="email", id="email", name="email")
+            div
+                label(for="password") Password
+                input(type="password", id="password", name="password")
+            div#formErrors.hide
+                ul
+            div
+                input(type="submit", id="submit", value="Log in")
+        p 
+            a(href="/register") Register Here

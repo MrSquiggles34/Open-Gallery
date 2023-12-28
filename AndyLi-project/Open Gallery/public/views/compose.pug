@@ -1,0 +1,18 @@
+// Add your compose form elements here
+div#compose-form
+    form(action="/compose" method="POST")
+        // Add your form fields here
+        input(type="text" name="title" placeholder="Title")
+        br
+        input(type="text" name="year" placeholder="Year")
+        br
+        input(type="text" name="category" placeholder="Category")
+        br
+        input(type="text" name="medium" placeholder="Medium")
+        br
+        input(type="text" name="poster" placeholder="Image Link")
+        br
+        textarea(name="description" placeholder="Description" , maxlength="256")
+        br
+        button(type="submit") Submit
+        
